@@ -21,7 +21,7 @@ class Note {
     }  
 }
 
-//Dodatkowe efekty do formularza notatki
+
 addNoteButton.addEventListener('click', function(){
     if(popup.style.display == "none")
     {
@@ -33,12 +33,12 @@ addNoteButton.addEventListener('click', function(){
     }
 })
 
-//Tworzenie nowej notatki po zatwierdzeniu formularza
+
 submitForm.addEventListener("click", function(){
     let note = new Note()
 })
 
-//Wyświetlanie notatki
+
 function displayNote(retrievedObject, i){
     let divForTask = document.createElement("div")
     divForTask.style.backgroundColor = retrievedObject.color
@@ -58,4 +58,43 @@ function displayNote(retrievedObject, i){
     let placeForDate = document.createElement("h5")
     placeForDate.innerText = retrievedObject.date
     divForTask.appendChild(placeForDate)
+}
+
+
+for(i in localStorage)
+{
+    let retrievedObject = JSON.parse(localStorage.getItem(i))
+    displayNote(retrievedObject, i)
+}
+
+
+function pinOnTopButton(divForTask){
+    let button = document.createElement("div")
+    button.classList.add("pinontop")
+    button.innerText = "Przypnij notkę"
+    divForTask.appendChild(button)
+    
+    button.addEventListener("click", function(){
+        this.parentNode.parentNode.prepend(this.parentNode)
+    })
+}
+
+
+function remove(id,divForTask) {
+    let exitButton = document.createElement("div")
+    exitButton.classList.add("exitButton")
+    divForTask.appendChild(exitButton)
+    let cross1 = document.createElement("div")
+    let cross2 = document.createElement("div")
+    cross1.classList.add("cross1")
+    cross2.classList.add("cross2")
+
+    exitButton.appendChild(cross1)
+    exitButton.appendChild(cross2)
+    exitButton.addEventListener("click", function(){
+        if (confirm('Czy na pewno usunąć tę notatkę?')) {
+            localStorage.removeItem(id)
+            location.reload()
+        }
+    })
 }

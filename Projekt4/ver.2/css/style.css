@@ -52,7 +52,7 @@ body{
     position: absolute;
     width: 25%;
     height: 40%;
-    background-color: rgba(240, 230, 240, 0.281);
+    background-color: rgb(255, 58, 58);
     border: 1px solid black;
     top: 20%;
     left:5%;
@@ -81,23 +81,24 @@ form input{
 #noteContainer{
     position: relative;
     height: auto;
-    width: 60%;
+    width: 100%;
     margin: auto;
     top: 150px;
     padding: 15px;
     line-height: 50%;
+    display: inline-flex;
 }
 
 .task{
-    margin: 15px;
+    margin: 0px 0px 25px 50px;
     padding: 15px;
-    width: 100%;
+    width: 300px;
     position: relative;
 }
 
 .pinontop{
     position: relative;
-    margin-left: 77%;
+    margin-left: 50%;
     text-align: center;
     padding: 15px;
     width: 130px;
