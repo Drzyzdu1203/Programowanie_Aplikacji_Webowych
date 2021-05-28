@@ -1,0 +1,41 @@
+.rec{
+    background-color: red;
+}
+.pad{
+    width: 250px;
+    height: 250px;
+    background-color: rgb(101, 173, 241);
+    margin-left: 30px;
+   
+}
+#top{
+    width: 47%;
+    background-color: rgb(175, 175, 175);
+    
+    
+}
+#record{
+    width: 100%;
+   
+}
+.recordBtn{
+    margin-top: 40px;
+    
+}
+#play{
+    width: 100%;
+}
+.playBtn{
+    margin-top: 30px;
+    
+}
+#reset{
+    width: 100%;
+}
+.reset{
+    margin-top: 30px;
+}
+body
+{
+    background-image: url(background.webp);
+}
