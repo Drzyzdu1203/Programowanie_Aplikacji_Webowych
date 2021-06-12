@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather API</title>
+
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+        
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                min-height: 100vh;
+                padding-top: 100px;
+                background-color:bisque;
+            }
+            .field {
+                margin: 30px;
+                color: white;
+                font-size: 1.5vw;
+            }
+            #btnSearch {
+                background-color: bisque;
+                border: 1.5px solid white;
+                padding: 7.5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #cityInput {
+                padding: 10px;
+                border: none;
+                border-radius: 10px;
+                color: gray;
+                outline: none;
+            }
+            #formDiv {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                border: 1.5px solid white;
+                border-radius: 25px;
+            }
+            #container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 15px;
+                padding: 20px;
+            }
+            .span {
+                color: white;
+                font-size: 1.6vw;
+                padding: 5px;
+            }
+            .singleDiv {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 15px;
+                margin: 10px;
+                border: 1.5px solid white;
+                border-radius: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id="formDiv">
+                <label class="field" style="font-size: 2vw;">Search city: </label>
+                <input type="text" class="field" id="cityInput" />
+                <button class="field" id="btnSearch">Add</button>
+            </div>
+            <div id="container"></div>
+        </div>
+        <script> var exports = {}; </script>
+        <script src="app.js"></script>
+    </body>
+</html>
