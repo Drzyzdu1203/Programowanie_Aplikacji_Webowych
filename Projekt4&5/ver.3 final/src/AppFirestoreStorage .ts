@@ -39,14 +39,14 @@ export default class AppFirestoreStorage extends AppStorage {
     .collection('notes')
     .doc(id)
     .get()
-    .then(response => { return { data: response.data(), id: response.id }});
+    .then((response: { data: () => any; id: string; }) => { return { data: response.data(), id: response.id }});
   }
 
   async getNotes(): Promise<IFirebaseGet> {
     return this.database
     .collection('notes')
     .get()
-    .then(response => { 
+    .then((response: { size: any; docs: any[]; }) => { 
       return { 
         size: response.size, 
         items: response.docs.map(item => item.data())
