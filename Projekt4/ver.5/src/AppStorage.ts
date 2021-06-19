@@ -1,0 +1,1 @@
+import {IAppStorage} from "./IAppStorage";
