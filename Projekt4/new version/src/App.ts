@@ -17,18 +17,23 @@ export default class App {
     clickAddButton.addEventListener("click", (ev: Event) => this.addNewNote());
   }
   async addNewNote() {
+
     const noteTitle = <HTMLInputElement>document.getElementById("titleInput");
     const title = noteTitle.value;
 
-    const noteDescription = <HTMLInputElement>(
-      document.getElementById("descriptionInput")
-    );
+    const noteDescription = <HTMLInputElement>document.getElementById("descriptionInput");
     const description = noteDescription.value;
+
+    const noteColor = <HTMLSelectElement>document.getElementById("colorInput");
+    const color = noteColor.value;
+
 
     const item: IAppStorage = {
       id: this.storageElement + 1,
       title: title,
       description: description,
+      color: color,
+      pin: false,
       date: new Date().toDateString(),
     };
     this.saveData(item);
