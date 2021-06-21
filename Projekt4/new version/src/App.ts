@@ -1,13 +1,30 @@
-//import { Notes } from "./notes";
-//import { Note } from "./note";
+import { Notes } from "./notes";
+import { Note } from "./note";
 //import { IAppStorage } from "./IAppStorage";
 //import firebase from "firebase";
 //import { firebaseConfig } from "./config";
 
 export default class App {
+  constructor() {
+    this.getNotes();
+    this.newNote();
+  }
 
+  async getNotes() {
+    const ann = new Notes();
+    ann.notesDisplay();
+  }
+  newNote() {
+    const ann = new Note();
 
- /*storageElement: number = 0;
+    const clickAddButton = <HTMLInputElement>(
+      document.getElementById("mainButton")
+    );
+    clickAddButton.addEventListener("click", (ev: Event) => ann.newNote());
+  }
+}
+
+/*storageElement: number = 0;
   notes: IAppStorage[] = [];
 
   constructor() {
@@ -64,4 +81,3 @@ export default class App {
   }
 
 */
-}

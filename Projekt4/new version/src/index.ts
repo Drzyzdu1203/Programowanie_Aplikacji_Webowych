@@ -1,10 +1,10 @@
-//import App from './App';
+import App from './App';
 import './main.scss';
-import firebase from "firebase";
-import { firebaseConfig } from "./config";
-//new App();
+//import firebase from "firebase";
+//import { firebaseConfig } from "./config";
+new App();
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+/*const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
 
 const note = {
@@ -19,3 +19,4 @@ addNote(note2);
 async function addNote (note2:any) {
     const res = await db.collection ('notes').add(note2)
 }
+*/

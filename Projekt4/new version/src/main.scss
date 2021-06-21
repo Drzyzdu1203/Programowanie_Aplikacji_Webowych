@@ -4,13 +4,18 @@ body {
 .mainDiv{
     float:left;
     width:230px;
-    width: 200px;
+    height: 200px;
     background-color: white;
     border:5px solid rgb(0, 195, 255);
     border-radius: 5%;
     float:left;
     margin:50px;
 
+  }
+  .divTop{
+    width:200px;
+    height: 200px;
+    background-color: white;
   }
 h1{
   margin-left: 820px;
