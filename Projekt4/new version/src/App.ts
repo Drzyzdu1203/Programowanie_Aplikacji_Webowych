@@ -1,9 +1,13 @@
 //import { Notes } from "./notes";
 //import { Note } from "./note";
-import { IAppStorage } from "./IAppStorage";
+//import { IAppStorage } from "./IAppStorage";
+//import firebase from "firebase";
+//import { firebaseConfig } from "./config";
 
 export default class App {
-  storageElement: number = 0;
+
+
+ /*storageElement: number = 0;
   notes: IAppStorage[] = [];
 
   constructor() {
@@ -58,4 +62,6 @@ export default class App {
       this.addNewNote();
     }
   }
+
+*/
 }
