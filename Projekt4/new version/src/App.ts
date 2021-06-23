@@ -1,10 +1,10 @@
-import { Notes } from "./notes";
-import { Note } from "./note";
+import { Notes } from "./Notes";
+import { Note } from "./Note";
 //import { IAppStorage } from "./IAppStorage";
 //import firebase from "firebase";
 //import { firebaseConfig } from "./config";
 
-export default class App {
+export  class App {
   constructor() {
     this.getNotes();
     this.newNote();
@@ -17,9 +17,7 @@ export default class App {
   newNote() {
     const ann = new Note();
 
-    const clickAddButton = <HTMLInputElement>(
-      document.getElementById("mainButton")
-    );
+    const clickAddButton = <HTMLInputElement>document.getElementById("mainButton");
     clickAddButton.addEventListener("click", (ev: Event) => ann.newNote());
   }
 }

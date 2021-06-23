@@ -3,6 +3,5 @@ export interface IAppStorage{
     title: string;
     description: string;
     color: string,
-    pin: boolean,
     date: string;
 } 

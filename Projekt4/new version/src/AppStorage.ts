@@ -1,4 +1,6 @@
 import { IAppStorage } from "./IAppStorage";
+import { FirebaseStorage } from "./FirebaseStorage";
+import { storageType } from "./StorageSwitch";
 import { Notes } from "./Notes";
 export class AppStorage {
   notes: IAppStorage[] = [];
@@ -17,31 +19,38 @@ export class AppStorage {
       return id;
     }
   }
+  async switchStorageType() {}
+
   async addNewNote() {
     const noteTitle = <HTMLInputElement>document.getElementById("titleInput");
     const title = noteTitle.value;
+
     const noteDescription = <HTMLInputElement>(
       document.getElementById("descriptionInput")
     );
     const description = noteDescription.value;
+
     const noteColor = <HTMLSelectElement>document.getElementById("colorInput");
     const color = noteColor.value;
 
-    const element = this.checkStorageId();
+    const check = this.checkStorageId();
 
     const item: IAppStorage = {
-      id: element + 1,
+      id: check + 1,
       title: title,
       description: description,
       color: color,
       date: new Date().toDateString(),
-      pin: false,
     };
+    if (storageType === "firebase") {
+      const ann = new FirebaseStorage();
+      ann.addNote(item);
+    } else {
+      this.saveData(item);
+    }
 
-    this.saveData(item);
-
-    const containerId = document.getElementById("container");
-    containerId.innerHTML = "";
+    const noteId = document.getElementById("notes");
+    noteId.innerHTML = "";
 
     const ann = new Notes();
     ann.notesDisplay();
@@ -55,15 +64,15 @@ export class AppStorage {
       this.notes.push(addNewNote);
       localStorage.setItem("note", JSON.stringify(this.notes));
     } else {
-      const notes2: IAppStorage[] = [];
+      const ls_data: IAppStorage[] = [];
       const a = JSON.parse(localStorage.getItem("note"));
 
       a.map((x: any) => {
-        notes2.push(x);
+        ls_data.push(x);
       });
 
-      notes2.push(addNewNote);
-      localStorage.setItem("note", JSON.stringify(notes2));
+      ls_data.push(addNewNote);
+      localStorage.setItem("note", JSON.stringify(ls_data));
     }
   }
   getData() {

@@ -9,9 +9,9 @@
     
 
         <h1> Add note..</h1>
-        <input id="titleInput" type="text" placeholder="Tytuł" onfocus="this.value=''" />
-        <input id="descriptionInput" type="text" placeholder="Treść notatki" onfocus="this.value=''" />
-        <button id="mainButton">Add</button>
+        <input id="titleInput" type="text" placeholder="Tytuł">
+        <input id="descriptionInput" type="text" placeholder="Treść notatki" >
+        <input id="mainButton" type="button" value="Add">
         <select id="colorInput">
           <option value="red">red</option>
           <option value="green">green</option>
@@ -21,7 +21,11 @@
           <option value="navy">navy</option>
           <option value="pink">pink</option>          
         </select>
-        <div id="note"></div>
+        <select id="StorageTypeInput">
+        <option value="firebase">firebase</option>
+        <option value="localStorage">local storage</option>
+      </select>
+        <div id="notes"></div>
 
 
     <script src="index.js"></script>

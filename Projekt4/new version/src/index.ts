@@ -1,8 +1,8 @@
-import App from './App';
+import { App } from './App';
 import './main.scss';
 //import firebase from "firebase";
 //import { firebaseConfig } from "./config";
-new App();
+const app = new App();
 
 /*const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
