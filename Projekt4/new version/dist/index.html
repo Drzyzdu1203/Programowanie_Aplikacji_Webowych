@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note keeper</title>
+  </head>
+  <body>
+    
+
+        <h1> Add note..</h1>
+        <input id="titleInput" type="text" placeholder="Tytuł">
+        <input id="descriptionInput" type="text" placeholder="Treść notatki" >
+        <input id="mainButton" type="button" value="Add">
+        <select id="colorInput">
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="black">black</option>
+          <option value="yellow">yellow</option>
+          <option value="navy">navy</option>
+          <option value="pink">pink</option>          
+        </select>
+        <select id="StorageTypeInput">
+        <option value="firebase">firebase</option>
+        <option value="localStorage">local storage</option>
+      </select>
+        <div id="notes"></div>
+
+
+    <script src="index.js"></script>
+  </body>
+</html>

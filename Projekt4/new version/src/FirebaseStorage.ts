@@ -22,7 +22,7 @@ export class FirebaseStorage{
         await this.db.collection('notes_from_app').add(note);
     }
 
-    async pinNote(id: string, note: IAppStorage){                   // odświeżanie  notatki
+    async updateNote(id: string, note: IAppStorage){                   // odświeżanie  notatki
         await this.db.collection('notes_from_app').doc(id).update(note);
     }
 

@@ -6,6 +6,8 @@
         "module": "commonjs",
         "target": "es6",
         "removeComments": true,
+        "types": ["jest"],
+        "typeRoots": ["'./types", "./node_modules/@types"]
     },
     "include": [
         "src/**/*"
